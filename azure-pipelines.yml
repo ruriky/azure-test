@@ -21,6 +21,7 @@ jobs:
 - job: mySecondJob
   pool:
     vmImage: 'ubuntu-latest'
+  dependsOn: myFirstJob
   steps:
   - script: echo Hello again, world!
     displayName: 'Run a one-line script'
