@@ -7,7 +7,7 @@ trigger:
 - '*'
 
 jobs:
-- job: myJob
+- job: myFirstJob
   pool:
     vmImage: 'ubuntu-latest'
   steps:
@@ -17,4 +17,14 @@ jobs:
   - script: |
       echo Add other tasks to build, test, and deploy your project.
       echo See https://aka.ms/yaml
+    displayName: 'Run a multi-line script'
+- job: mySecondJob
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - script: echo Hello again, world!
+    displayName: 'Run a one-line script'
+
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
     displayName: 'Run a multi-line script'
